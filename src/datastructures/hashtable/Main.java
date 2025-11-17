@@ -87,6 +87,20 @@ public class Main {
         return new int[]{};
     }
 
+    //DSA Question-Subarray Sum ( ** Interview Question)
+    public static List<Integer> subarraySum(int[] nums,int target){
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+        int currentSum = 0;
+        for (int i = 0; i <nums.length; i++) {
+            if (!hashMap.containsKey(currentSum-target)){
+                currentSum = currentSum+nums[i];
+                hashMap.put(currentSum,i);
+            }
+        }
+
+        return new ArrayList<>();
+    }
+
     
     public static void main(String[] args) {
 
@@ -116,7 +130,7 @@ public class Main {
 //        String strings[] = {"eat","bat","tea","tab","nig"};
 //        System.out.println(groupAnagrams(strings));//DSA Question-Group Anagrams ( ** Interview Question)
 
-        int[] nums ={2, 7, 11, 15};
+        int[] nums ={5,2,2,7,4};
         System.out.println(Arrays.toString(twoSum(nums,9)));//DSA Question-Two Sum ( ** Interview Question)
 
     }
