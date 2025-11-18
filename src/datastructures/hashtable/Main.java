@@ -88,17 +88,20 @@ public class Main {
     }
 
     //DSA Question-Subarray Sum ( ** Interview Question)
-    public static List<Integer> subarraySum(int[] nums,int target){
+    public static int[] subarraySum(int[] nums,int target){
         HashMap<Integer,Integer> hashMap = new HashMap<>();
         int currentSum = 0;
+        hashMap.put(currentSum,-1);
         for (int i = 0; i <nums.length; i++) {
-            if (!hashMap.containsKey(currentSum-target)){
-                currentSum = currentSum+nums[i];
+            currentSum = currentSum+nums[i];
+            int key = currentSum-target;
+            if (hashMap.containsKey(key)){
+                return new int[] {hashMap.get(key) + 1,i};
+            }else{
                 hashMap.put(currentSum,i);
             }
         }
-
-        return new ArrayList<>();
+        return new int[] {};
     }
 
     
@@ -130,8 +133,12 @@ public class Main {
 //        String strings[] = {"eat","bat","tea","tab","nig"};
 //        System.out.println(groupAnagrams(strings));//DSA Question-Group Anagrams ( ** Interview Question)
 
-        int[] nums ={5,2,2,7,4};
-        System.out.println(Arrays.toString(twoSum(nums,9)));//DSA Question-Two Sum ( ** Interview Question)
+//        int[] nums ={5,2,2,7,4};
+//        System.out.println(Arrays.toString(twoSum(nums,9)));//DSA Question-Two Sum ( ** Interview Question)
+
+
+        int[] nums ={0,2,3,4,5,1};
+        System.out.println(Arrays.toString(subarraySum(nums,9)));
 
     }
 }
