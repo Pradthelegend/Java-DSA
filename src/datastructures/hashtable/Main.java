@@ -92,14 +92,14 @@ public class Main {
         HashMap<Integer,Integer> hashMap = new HashMap<>();
         int currentSum = 0;
         hashMap.put(currentSum,-1);
+
         for (int i = 0; i <nums.length; i++) {
             currentSum = currentSum+nums[i];
             int key = currentSum-target;
             if (hashMap.containsKey(key)){
                 return new int[] {hashMap.get(key) + 1,i};
-            }else{
-                hashMap.put(currentSum,i);
             }
+            hashMap.put(currentSum,i);
         }
         return new int[] {};
     }
