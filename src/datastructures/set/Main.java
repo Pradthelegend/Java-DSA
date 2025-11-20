@@ -10,19 +10,18 @@ public class Main {
         return new ArrayList<>(set);
     }
 
-//    //DSA Question-Has Unique Chars ( ** Interview Question)
-//    public static boolean hasUniqueChars(String inputString){
-//        Set<Character> uniqueSet = new HashSet<>();
-//        char[] chars = inputString.toCharArray();
-//
-//        for (char c : chars){
-//            if (uniqueSet.contains(c)){
-//                return false;
-//            }
-//            uniqueSet.add(c);
-//        }
-//        return false;
-//    }
+    //DSA Question-Has Unique Chars ( ** Interview Question)
+    public static boolean hasUniqueChars(String inputString){
+        Set<Character> charSet = new HashSet<>();
+
+        for (char c : inputString.toCharArray()){
+            if (charSet.contains(c)){
+                return false;
+            }
+            charSet.add(c);
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
 
