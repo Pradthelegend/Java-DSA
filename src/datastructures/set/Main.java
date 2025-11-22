@@ -23,18 +23,22 @@ public class Main {
         return true;
     }
 
-//    //DSA Question-Find Pairs ( ** Interview Question)
-//    public static List<int[]> findPairs(int[] arr1, int[] arr2, int target){
-//        Set<Integer> set1 = new HashSet<>();
-//        Set<Integer> set2 = new HashSet<>();
-//
-//        for (Integer i : arr1){
-//            int compliment = i-target;
-//            set1.add(i);
-//            if (set1.contains(arr2));
-//        }
-//        return new ArrayList<>();
-//    }
+    //DSA Question-Find Pairs ( ** Interview Question)
+    public static List<int[]> findPairs(int[] arr1, int[] arr2, int target){
+        Set<Integer> set = new HashSet<>();
+        List<int[]> list = new ArrayList<>();
+        for (Integer i : arr1){
+            set.add(i);
+        }
+
+        for (Integer j : arr2){
+            int complement = target - j;
+            if (set.contains(complement)){
+                list.add(new int[] {complement,j});
+            }
+        }
+        return list;
+    }
 
 
     public static void main(String[] args) {
@@ -42,6 +46,13 @@ public class Main {
 //        System.out.println(removeDuplicates(Arrays.asList(1,4,1,5,6,8,5)));//DSA Question-Remove Duplicates ( ** Interview Question)
 
 //        System.out.println(hasUniqueChars("Suces"));//DSA Question-Has Unique Chars ( ** Interview Question)
+
+
+        //DSA Question-Find Pairs ( ** Interview Question)
+        List<int[]> pairs = findPairs(new int[] {1,2,3}, new int[] {3,4,5}, 6);
+        for (int[] pair : pairs) {
+            System.out.println(Arrays.toString(pair));
+        }
 
 
     }
