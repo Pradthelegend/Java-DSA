@@ -40,6 +40,28 @@ public class Main {
         return list;
     }
 
+    //DSA Question-Longest Consecutive Sequence ( ** Interview Question)
+    public static int longestConsecutiveSequence(int[] inputArray){
+        Set<Integer> set = new HashSet<>();
+
+        for (Integer i : inputArray){
+            set.add(i);
+        }
+
+        int currentStreak=0;
+        int longestStreak=0;
+
+        for (Integer j : inputArray){
+            currentStreak = 0;
+            if (set.contains(j-1)) currentStreak = 1;
+            if (set.contains(j+1)) longestStreak = 1;
+
+        }
+
+
+        return 1;
+    }
+
 
     public static void main(String[] args) {
 
