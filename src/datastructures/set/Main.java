@@ -48,18 +48,21 @@ public class Main {
             set.add(i);
         }
 
-        int currentStreak=0;
         int longestStreak=0;
 
         for (Integer j : inputArray){
-            currentStreak = 0;
-            if (set.contains(j-1)) currentStreak = 1;
-            if (set.contains(j+1)) longestStreak = 1;
+            if (!set.contains(j-1)) {
+                int currentNum = j;
+                int currentStreak = 1;
 
+                while (set.contains(currentNum + 1)) {
+                    currentNum++;
+                    currentStreak++;
+                }
+                longestStreak = Math.max(longestStreak,currentStreak);
+            }
         }
-
-
-        return 1;
+        return longestStreak;
     }
 
 
@@ -71,10 +74,12 @@ public class Main {
 
 
         //DSA Question-Find Pairs ( ** Interview Question)
-        List<int[]> pairs = findPairs(new int[] {1,2,3}, new int[] {3,4,5}, 6);
-        for (int[] pair : pairs) {
-            System.out.println(Arrays.toString(pair));
-        }
+//        List<int[]> pairs = findPairs(new int[] {1,2,3}, new int[] {3,4,5}, 6);
+//        for (int[] pair : pairs) {
+//            System.out.println(Arrays.toString(pair));
+//        }
+
+        System.out.println(longestConsecutiveSequence(new int[] {100,4,200,1,3,2}));
 
 
     }
