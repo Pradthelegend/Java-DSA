@@ -1,4 +1,4 @@
-package datastructures.set;
+package datastructures.set.implimentation.hashset;
 
 import java.util.*;
 
@@ -59,6 +59,7 @@ public class Main {
                     currentNum++;
                     currentStreak++;
                 }
+
                 longestStreak = Math.max(longestStreak,currentStreak);
             }
         }
