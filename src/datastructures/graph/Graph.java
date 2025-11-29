@@ -33,6 +33,17 @@ public class Graph {
         return false;
     }
 
+    public boolean removeVertex(String vertex){
+        if (adjList.get(vertex) != null){
+            for (String s : adjList.get(vertex)){
+                adjList.get(s).remove(vertex);
+            }
+            adjList.remove(vertex);
+            return true;
+        }
+        return false;
+    }
+
     public void printGraph(){
         System.out.println(adjList);
     }
