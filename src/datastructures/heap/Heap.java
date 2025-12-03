@@ -29,8 +29,8 @@ public class Heap {
 
     private void swap(int index1, int index2) {
         int temp = heap.get(index1);
-        heap.set(index1, heap.get(index2));
-        heap.set(index2, temp);
+        heap.set(/*index*/index1, /*value*/heap.get(index2));
+        heap.set(/*index*/index2, /*value*/temp);
     }
 
     public void insert(int value){
@@ -42,4 +42,15 @@ public class Heap {
             current = parent(current);
         }
     }
+
+    public Integer remove(){
+        if (heap.size()==0) return null;
+        if (heap.size()==1) return heap.remove(0);
+
+        int maxValue=heap.get(0);
+        heap.set(0,heap.size()-1);
+
+        return maxValue;
+    }
+
 }
