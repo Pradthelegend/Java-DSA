@@ -10,8 +10,12 @@ public class Main {
         heap.insert(2);
         heap.insert(3);
         heap.insert(4);
+        heap.insert(5);
+        heap.insert(6);
+        heap.insert(7);
 
-        heap.remove();
+
+//        heap.remove();
         System.out.println(heap.getHeap());
 
     }
