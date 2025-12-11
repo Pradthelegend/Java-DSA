@@ -11,6 +11,11 @@ public class Heap {
         this.heap = new ArrayList<>();
     }
 
+    @Override
+    public String toString() {
+        return heap.toString();
+    }
+
     public List<Integer> getHeap(){
         return new ArrayList<>(heap);
     }
