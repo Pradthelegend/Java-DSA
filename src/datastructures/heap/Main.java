@@ -1,21 +1,23 @@
 package datastructures.heap;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
 
     //DSA Question-Kth Smallest Element in an Array
     public static int findKthSmallest(int[] nums,int k){
-//        if (nums.length==0) return ;
-        if (nums.length==1) return nums[0];
-        Heap heap = new Heap();
+
+        Heap maxHeap = new Heap();
         for (Integer i : nums){
-            heap.insert(i);
+            maxHeap.insert(i);
+            if (maxHeap.getHeap().size() > k){
+                maxHeap.remove();
+            }
         }
-//        System.out.println(heap);
-        for (int i = 0; i <k-1 ; i++) {
-            heap.remove();
-        }
-        return heap.remove();
+        return maxHeap.remove();
     }
+
     public static void main(String[] args) {
 
 //        Heap heap = new Heap();
