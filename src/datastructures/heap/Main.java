@@ -2,6 +2,7 @@ package datastructures.heap;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -16,6 +17,19 @@ public class Main {
             }
         }
         return maxHeap.remove();
+    }
+
+    //DSA Question-Maximum Element in a Stream
+    public static List<Integer> streamMax(int[] nums){
+        Heap maxHeap = new Heap();
+        List<Integer> maxStream = new ArrayList<>();
+
+        for (int i : nums){
+            maxHeap.insert(i);
+            maxStream.add(maxHeap.getHeap().get(0));
+        }
+
+        return maxStream;
     }
 
     public static void main(String[] args) {
@@ -33,6 +47,9 @@ public class Main {
 //        //        heap.remove();
 //        System.out.println(heap.getHeap());
 
-        System.out.println(findKthSmallest(new int[] {1,8,5,9,3,6,10},2));
+//        System.out.println(findKthSmallest(new int[] {1,8,5,9,3,6,10},2)); //DSA Question-Kth Smallest Element in an Array
+
+        System.out.println(streamMax(new int[] {1,8,5,9,3,6,10}));
+
     }
 }
