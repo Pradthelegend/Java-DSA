@@ -14,8 +14,19 @@ public class RecursiveBinarySearchTree {
         }
     }
 
+    private Node recursiveInsert(Node currentNode, int value){
+        if (currentNode == null) return new Node(value);
+
+        if (value < currentNode.value){
+            currentNode.left = recursiveInsert(currentNode.left,value);
+        } else if (value > currentNode.value) {
+            currentNode.right = recursiveInsert(currentNode.right,value);
+        }
+        return currentNode;
+    }
+
     private boolean recursiveContains(Node currentNode, int value){
-        if (root == null) return false;
+        if (currentNode == null) return false;
 
         if (currentNode.value == value) return true;
 
@@ -24,6 +35,11 @@ public class RecursiveBinarySearchTree {
         }else {
             return recursiveContains(currentNode.right,value);
         }
+    }
+
+    public void recursiveInsert(int value){
+        if (root == null) root = new Node(value);
+        recursiveInsert(root,value);
     }
 
     public boolean recursiveContains(int value){

@@ -18,8 +18,15 @@ public class Main {
 
         RecursiveBinarySearchTree rBST = new RecursiveBinarySearchTree();
 
-        rBST.recursiveContains(5);
+        rBST.recursiveInsert(5);
+        rBST.recursiveInsert(7);
+        rBST.recursiveInsert(8);
+        rBST.recursiveInsert(3);
+        rBST.recursiveInsert(1);
 
+        System.out.println(rBST.recursiveContains(5));
+
+        System.out.println(rBST);
 
     }
 
