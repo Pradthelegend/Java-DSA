@@ -3,14 +3,22 @@ package datastructures.binarysearchtree;
 public class Main {
 
     public static void main(String[] args) {
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
 
-        binarySearchTree.insert(7);
-        binarySearchTree.insert(4);
-        binarySearchTree.insert(8);
-        binarySearchTree.insert(1);
+        //This is an iterative version meaning the methods use a loop to move to next nodes.
+//        BinarySearchTree binarySearchTree = new BinarySearchTree();
+//
+//        binarySearchTree.insert(7);
+//        binarySearchTree.insert(4);
+//        binarySearchTree.insert(8);
+//        binarySearchTree.insert(1);
+//
+//        System.out.println(binarySearchTree.contains(7));
 
-        System.out.println(binarySearchTree.contains(7));
+        //This is a recursive version of BST (Methods use recursion to move to the next nodes).
+
+        RecursiveBinarySearchTree rBST = new RecursiveBinarySearchTree();
+
+        rBST.recursiveContains(5);
 
 
     }
