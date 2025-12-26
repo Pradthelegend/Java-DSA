@@ -25,8 +25,8 @@ public class Main {
         rBST.recursiveInsert(1);
 
         System.out.println(rBST.recursiveContains(5));
+        rBST.deleteNode(5);
 
-        System.out.println(rBST);
 
     }
 
